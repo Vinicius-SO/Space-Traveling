@@ -1,4 +1,8 @@
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
+import Header from '../components/Header';
+import { FiUser } from 'react-icons/fi';
+import { FiCalendar } from 'react-icons/fi';
 
 import { getPrismicClient } from '../services/prismic';
 
@@ -24,9 +28,85 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-// export default function Home() {
-//   // TODO
-// }
+export default function Home() {
+  return(
+    <>
+      <div className={styles.header}>
+        <Header/>
+      </div>
+      <main className={styles.content}>
+        {/* <div className={styles.Post}>
+          {posts.map(post => (
+            <Link href="" key={post.uid}>
+              <a>
+                <strong className={styles.title}>{post.data.title}</strong>
+                <p className={styles.description}>{post.data.subtitle}</p>
+                <div className={styles.box}>
+                  <time className={styles.date}> <FiCalendar /> {post.first_publication_date}</time>
+                  <span className={styles.author}> <FiUser size={16}/> {post.data.author}</span>
+                </div>
+              </a>
+            </Link>
+          ))}
+            
+        </div> */}
+  
+        <div className={styles.Post}>
+            <Link href="">
+              <a>
+                <strong className={styles.title}>Criando um app CRA do zero</strong>
+                <p className={styles.description}>Tudo sobre como criar a sua primeira aplicação utilizando Create React App</p>
+                <div className={styles.box}>
+                  <time className={styles.date}> <FiCalendar /> 15 mar 2021</time>
+                  <span className={styles.author}> <FiUser size={16}/> Joseph Oliveira</span>
+                </div>
+              </a>
+            </Link>
+        </div>
+  
+        <div className={styles.Post}>
+            <Link href="">
+              <a>
+                <strong className={styles.title}>Como utilizar Hooks</strong>
+                <p className={styles.description}>Pensando em scincronização em vez de ciclos de vida</p>
+                <div className={styles.box}>
+                  <time className={styles.date}> <FiCalendar /> 15 mar 2021</time>
+                  <span className={styles.author}> <FiUser size={16}/> Joseph Oliveira</span>
+                </div>
+              </a>
+            </Link>
+        </div>
+  
+        <div className={styles.Post}>
+            <Link href="">
+              <a>
+                <strong className={styles.title}>Criando um app CRA do zero</strong>
+                <p className={styles.description}>Tudo sobre como criar a sua primeira aplicação utilizando Create React App</p>
+                <div className={styles.box}>
+                  <time className={styles.date}> <FiCalendar /> 15 mar 2021</time>
+                  <span className={styles.author}> <FiUser size={16}/> Joseph Oliveira</span>
+                </div>
+              </a>
+            </Link>
+        </div>
+  
+        <div className={styles.Post}>
+            <Link href="">
+              <a>
+                <strong className={styles.title}>Como utilizar Hooks</strong>
+                <p className={styles.description}>Pensando em scincronização em vez de ciclos de vida</p>
+                <div className={styles.box}>
+                  <time className={styles.date}> <FiCalendar /> 15 mar 2021</time>
+                  <span className={styles.author}> <FiUser size={16}/> Joseph Oliveira</span>
+                </div>
+              </a>
+            </Link>
+        </div>
+        <button className={styles.button}>Carregar mais posts</button>
+      </main>
+    </>
+    )
+}
 
 // export const getStaticProps = async () => {
 //   // const prismic = getPrismicClient({});
